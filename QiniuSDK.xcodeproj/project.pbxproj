@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		05EFAFE5DD675C7ECAD063A4 /* libPods-QiniuSDK_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1D8890E270C769A9E798A8E /* libPods-QiniuSDK_iOS.a */; };
+		6A2784D21E78528000216B2B /* QNInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A2784D01E78528000216B2B /* QNInputStream.h */; };
+		6A2784D31E78528000216B2B /* QNInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2784D11E78528000216B2B /* QNInputStream.m */; };
+		6A2784D41E78528000216B2B /* QNInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A2784D11E78528000216B2B /* QNInputStream.m */; };
 		7CF44E0E25F6BE604AE68F92 /* libPods-QiniuSDK_iOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 422A3A07B38819979BBFE724 /* libPods-QiniuSDK_iOSTests.a */; };
 		93CEF47E1BDE11FF00750FE8 /* QNPHAssetFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 93CEF47C1BDE11FF00750FE8 /* QNPHAssetFile.h */; };
 		93CEF47F1BDE11FF00750FE8 /* QNPHAssetFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CEF47D1BDE11FF00750FE8 /* QNPHAssetFile.m */; };
@@ -124,6 +127,8 @@
 		466E7AACB5F77BA0D4DE4070 /* Pods-QiniuSDK_MacTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiniuSDK_MacTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiniuSDK_MacTests/Pods-QiniuSDK_MacTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6663602DA8CC701EA3B11F04 /* Pods-QiniuSDK_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiniuSDK_iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiniuSDK_iOS/Pods-QiniuSDK_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		69B20FB4731F84969BC5AEBE /* Pods-QiniuSDK_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiniuSDK_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiniuSDK_Mac/Pods-QiniuSDK_Mac.debug.xcconfig"; sourceTree = "<group>"; };
+		6A2784D01E78528000216B2B /* QNInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNInputStream.h; sourceTree = "<group>"; };
+		6A2784D11E78528000216B2B /* QNInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNInputStream.m; sourceTree = "<group>"; };
 		6DD894AA2A19370381AD4201 /* Pods-QiniuSDK_iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QiniuSDK_iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QiniuSDK_iOSTests/Pods-QiniuSDK_iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73B66D8E78B0B3A0BEEA45A6 /* libPods-QiniuSDK_Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QiniuSDK_Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A317CD0B63C0F3745EECC77 /* libPods-QiniuSDK_MacTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QiniuSDK_MacTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -343,6 +348,8 @@
 				93D01E631C7065C200E7F47C /* QNPHAssetResource.m */,
 				DFBF636D1BCCE28200A771D8 /* QNSystem.m */,
 				DFBF63701BCCE2A600A771D8 /* QNSystem.h */,
+				6A2784D01E78528000216B2B /* QNInputStream.h */,
+				6A2784D11E78528000216B2B /* QNInputStream.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -417,6 +424,7 @@
 				DFF525371A626A3700D02BA1 /* QNHttpDelegate.h in Headers */,
 				93CEF47E1BDE11FF00750FE8 /* QNPHAssetFile.h in Headers */,
 				DF2CDE6019DAC6A400CE01FB /* QNCrc32.h in Headers */,
+				6A2784D21E78528000216B2B /* QNInputStream.h in Headers */,
 				DFF126F11B639F3B0005C39C /* QNFile.h in Headers */,
 				DFA9B63B19DF904000A15FD1 /* QNEtag.h in Headers */,
 				DF2CDE5C19DAC6A400CE01FB /* QNUrlSafeBase64.h in Headers */,
@@ -585,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		13110C17BA296E0C06CAB606 /* [CP] Copy Pods Resources */ = {
@@ -630,7 +638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		6142E4363A5B0E163FEDFA1F /* [CP] Check Pods Manifest.lock */ = {
@@ -645,7 +653,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		706525AE4AB50881D3890333 /* [CP] Embed Pods Frameworks */ = {
@@ -690,7 +698,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B014382FCFA218172365E0CA /* [CP] Copy Pods Resources */ = {
@@ -730,6 +738,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2784D31E78528000216B2B /* QNInputStream.m in Sources */,
 				DF2CDE5D19DAC6A400CE01FB /* QNUrlSafeBase64.m in Sources */,
 				DFBF636E1BCCE28300A771D8 /* QNSystem.m in Sources */,
 				DF0D23CF19DCE6E500D6B68F /* QNResponseInfo.m in Sources */,
@@ -774,6 +783,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A2784D41E78528000216B2B /* QNInputStream.m in Sources */,
 				DF24DDA11B63FF1800EF57E6 /* QNALAssetFile.m in Sources */,
 				DFBF636F1BCCE28300A771D8 /* QNSystem.m in Sources */,
 				DF24DDA01B63FF0E00EF57E6 /* QNFile.m in Sources */,
