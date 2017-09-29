@@ -130,6 +130,11 @@ static BOOL needRetry(NSHTTPURLResponse *httpResponse, NSError *error) {
     return self;
 }
 
+
+- (void) dealloc {
+    [_session finishTasksAndInvalidate];
+}
+
 - (instancetype)init {
     return [self initWithProxy:nil timeout:60 urlConverter:nil dns:nil];
 }
