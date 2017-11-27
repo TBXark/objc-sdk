@@ -8,6 +8,13 @@ def test_dependencies
   pod 'AGAsyncTestHelper/Shorthand'
 end
 
+
+target 'Qiniu' do
+    platform :ios, '7.0'
+    shared_dependencies
+end
+
+
 target 'QiniuSDK_iOS' do
   platform :ios, '7.0'
   shared_dependencies
